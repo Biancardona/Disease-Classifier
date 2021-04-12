@@ -8,7 +8,11 @@ window.bpd = {
     let b = jsonStr.replace(/'/g, '"');
     string = JSON.parse(b);//converts to a regular object
     console.log(string[0].atDate);
-
+    string.sort(function (a, b) {
+      let c = new Date(a.atDate);
+      let d = new Date(b.atDate);
+      console.log(d);
+    });
   }
 };
 
