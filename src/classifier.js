@@ -20,11 +20,28 @@ window.bpd = {
     function lastArray() {
       let lastItem = sortedArray[sortedArray.length - 1];
       console.log(lastItem);
-    }
-    lastArray();
 
-    return sortedArray;
+      if (lastItem.SysBP >= 180 && lastItem.DiaBP >= 120) {
+        alert("Stage3");
+        return "stage3";
+      }
+      if (lastItem.SysBP >= 160 && lastItem.SysBP < 180 || lastItem.DiaBP >= 100 && lastItem.DiaBP < 110) {
+        alert("Stage2");
+        return "stage2";
+      }
+      if (lastItem.SysBP >= 140 && lastItem.SysBP < 160 || lastItem.DiaBP >= 90 && lastItem.DiaBP < 100) {
+        alert("Stage1");
+        return "stage1";
+      }
+
+      else
+        return "No Hypertension";
+
+
+    }
+    return lastArray();
   }
+
 };
 
 

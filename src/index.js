@@ -25,12 +25,14 @@ el.addEventListener("click"), (){
 let textAreaValue = function () {
   let textArea = document.getElementById("bpdata").value;
   //   let offsetNumber = document.getElementById("offset2").value;
+
   let result = window.bpd.classification(textArea);
+  console.log(result);
 };
-//   document.getElementById("decodetextarea").value = result;
-// };
+// document.getElementById("resultTextarea").value = result;
+
 // //Funcion para copiar el texto Encode a Decode
-document.getElementById("encodebutton").addEventListener("click", textAreaValue);
+document.getElementById("classButton").addEventListener("click", textAreaValue);
 
 // //Funcion para obtener elemento de textarea decode
 // let textAreaValue1 = function () {
