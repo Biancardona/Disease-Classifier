@@ -4,11 +4,11 @@ window.bpd = {
       return '"' + s.substring(0, s.length - 1) + '":';
     });
 
-    let b = jsonStr.replace(/'/g, '"');
+    let b = jsonStr.replace(/'/g, '"'); //Replacing songle quotes to double
     return JSON.parse(b);
   },
   sortArray(array) {
-    return array.sort(function (a, b) { //sorting array by object date
+    return array.sort(function (a, b) { //Sorting array by object date property
       let c = new Date(a.atDate);
       let d = new Date(b.atDate);
       return c - d;
@@ -37,23 +37,35 @@ window.bpd = {
     let jsonArray = this.parseStringtoJson(string);
     let sortedArray = this.sortArray(jsonArray);
     let lastItem = sortedArray[sortedArray.length - 1];
+    let oldesItem = sortedArray[sortedArray.length - 2];
+    let percentage = (lastItem.eGFR - oldesItem.eGFR) / oldesItem.eGFR * 100.0;
     console.log(lastItem);
+    console.log(oldesItem);
+    console.log(percentage);
+    let classification = " ";
+
     if (lastItem.eGFR >= 90) {
-      return "Normal";
+      classification = "Normal";
     }
     if (lastItem.eGFR >= 60 && lastItem.eGFR <= 89) {
-      return "Mildly Decreased";
+      classification = "Mildly Decreased";
     }
     if (lastItem.eGFR >= 45 && lastItem.eGFR <= 59) {
-      return "Mild to Moderate";
+      classification = "Mild to Moderate";
     }
     if (lastItem.eGFR >= 30 && lastItem.eGFR <= 44) {
-      return "Moderate to Severe";
+      classification = "Moderate to Severe";
     }
     if (lastItem.eGFR >= 15 && lastItem.eGFR <= 29) {
-      return "Severely Decreased";
-    } else {
-      return "KidneyFailure";
+      classification = "Severely Decreased";
     }
+    if (percentage <= -20) {
+      return "Latest reading:\neGFR: " + lastItem.eGFR + "\nDate: " + lastItem.atDate + "\nClassification: " + classification + "\nOldest reading:\neGFR: " + oldesItem.eGFR + "\nDate: " + oldesItem.atDate + "\nClassification: " + classification + percentage;
+
+    } else {
+      classification = "KidneyFailure";
+    }
+
+    return "Latest reading:\neGFR: " + lastItem.eGFR + "\nDate: " + lastItem.atDate + "\nClassification: " + classification;
   }
 };

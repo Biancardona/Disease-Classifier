@@ -4,48 +4,50 @@
   margin: 0%;
   padding: 0%
 }
+
 h1 {
   font-size: 36px;
   text-align: center;
   letter-spacing: 1px;
   color: whitesmoke;
-  word-spacing:12px;
+  word-spacing: 12px;
   margin: 10px 0;
   padding-top: 20px;
 }
-.cards{
-  display:flex;
+
+.cards {
+  display: flex;
   float: left;
   margin: 10px;
   padding: 80px;
   padding-top: 60px;
-
 }
+
 .container {
   padding-left: 15px;
   padding-right: 15px;
   margin-right: auto;
   margin-left: auto;
-  position:relative;
+  position: relative;
   min-height: 1px;
 }
-article{
+
+article {
   min-height: 400px;
   padding: 20px;
-  margin:30px;
-
-
+  margin: 30px;
 }
-textarea{
-  padding:20px;
-  margin:20px;
+
+textarea {
+  padding: 20px;
+  margin: 20px;
   text-align: left;
   font-size: 20px;
   width: 90%;
   height: 300px;
   border-radius: 20px;
-
 }
+
 .button {
   border: 2px solid #fff;
   color: rgb(60, 50, 119);
@@ -58,82 +60,77 @@ textarea{
   display: inline-block;
   cursor: pointer;
   margin: 4px 2px;
-  position:absolute;
-  top:550px;
+  position: absolute;
+  top: 550px;
 }
-.column, .column2{
+
+.column,
+.column2 {
   width: 130%;
 }
-.button1{
-  left:350px;
+.button1 {
+  left: 350px;
 }
-.button2{
-  left:920px;
+.button2 {
+  left: 920px;
 }
-#screen1 {
-  display:block
-}
-#screen2 {
-  display:none
-}
-#encode {
-text-transform: uppercase
-}
-@media(min-width:1200px){
-  .button{
-    top:600px;
+
+@media(min-width:1200px) {
+  .button {
+    top: 600px;
   }
 }
-@media(max-width:1200px){
+
+@media(max-width:1200px) {
   .cards {
-    padding:0px;
+    padding: 0px;
   }
-  .button1{
+  .button1 {
     left: 200px;
   }
-  .button2{
-    left:600px;
-}
-}
-@media(max-width:880px){
-  .cards{
-    padding:0px;
-    display:block;
+  .button2 {
+    left: 600px;
   }
-  .button{
+}
+
+@media(max-width:880px) {
+  .cards {
+    padding: 0px;
+    display: block;
+  }
+  .button {
     left: 180px;
   }
-  .button1{
+  .button1 {
     top: 500px;
   }
-  .button2{
-    top:1500px;
-}
-textarea{
-  width: 50%;
-}
-}
-@media(max-width:640px){
-  .cards{
-    padding:0px;
-    display:block;
+  .button2 {
+    top: 1500px;
   }
-  .button{
-    left:110px;
+  textarea {
+    width: 50%;
   }
-  .button1{
-    top:450px;
-  }
-  .button2{
-    top:1250px;
-}
-article{
-  padding:0px;
-  margin:0px;
-}
-textarea{
-  width: 50%;
-}
 }
 
-
+@media(max-width:640px) {
+  .cards {
+    padding: 0px;
+    display: block;
+  }
+  .button {
+    left: 110px;
+  }
+  .button1 {
+    top: 450px;
+  }
+  .button2 {
+    top: 1250px;
+  }
+  article {
+    padding: 0px;
+    margin: 0px;
+  }
+  textarea {
+    width: 50%;
+  }
+}
