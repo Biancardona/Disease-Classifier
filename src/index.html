@@ -9,32 +9,38 @@
   <link href="https://fonts.googleapis.com/css?family=Annie Use Your Telescope" rel="stylesheet">
 </head>
 
-<body class="body">
-  <header class="a">
+<body>
+  <div class="container">
     <h1> Disease Classifier</h1>
-  </header>
-  <div id="screen1" class="a">
+    <div class="cards">
+      <div class="column">
+        <article role="article">
+          <textarea id="bpdata" class="form-control1" name="textarea" placeholder="Hypertension Calculator"
+            required></textarea>
+        </article>
+        <article role="article">
+          <textarea id="resultTextarea" class="form-control2" name="textarea1" placeholder="RESULTS Hypertension"
+            required> </textarea>
+          <button id="classButton" class="button button1" name="encode2">Classification</button>
+        </article>
       </div>
-
-  <main>
-
-    <textarea id="bpdata" class="form-control1" name="textarea" rows="10" cols="50"
-      placeholder="Hypertension Calculator" required></textarea>
-    <br>
-    <textarea id="resultTextarea" class="form-control2" name="textarea1" rows="10" cols="50" placeholder="Results"></textarea>
-    <br>
-
-    <input id="offset2" class="input2" type="text" name="offset2" required>
-    <button id="classButton" class="button2" name="encode2">Classification</button>
-    <br>
-<!--
-    <button id="decodebutton" class="button3" name="decode">Decode</button> -->
+      <div class="column2">
+        <article role="article">
+          <textarea id="egfrdata" class="form-control3" name="textarea3" rows="10" cols="50"
+            placeholder="Kidney Disease Calculator" required></textarea>
+        </article>
+        <article role="article">
+          <textarea id="resultKdc" class="form-control4" name="textarea4" rows="10" cols="50"
+            placeholder="RESULTS Kidney Disease"></textarea>
+          <button id="classKidneyButton" class="button button2" name="decode">Classification</button>
+        </article>
+      </div>
+    </div>
   </div>
-  <script src="classifier.js"></script>
 
+  <script src="classifier.js"></script>
   <script src="index.js"></script>
 
-  </main>
 </body>
 
 </html>

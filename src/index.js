@@ -1,4 +1,3 @@
-
 /*Funcion generica para esconder elementos por su ID
 let hide = function (elementId) {
   let elem = document.getElementById(elementId);
@@ -21,25 +20,20 @@ el.addEventListener("click", function () {
 el.addEventListener("click"), (){
   document.getElementById ("offset2").value = result;s
 };*/
-//Funcion para obtener elemento de textarea encode
-let textAreaValue = function () {
+
+let textAreaValue = function () { //Obtainig the texarea element with this function
   let textArea = document.getElementById("bpdata").value;
-  //   let offsetNumber = document.getElementById("offset2").value;
-
-  let result = window.bpd.classification(textArea);
+  let result = window.bpd.hypertensionClassification(textArea);
   console.log(result);
+  document.getElementById("resultTextarea").value = result; //Changing the value and showing the result in resultTextArea
 };
-// document.getElementById("resultTextarea").value = result;
-
-// //Funcion para copiar el texto Encode a Decode
 document.getElementById("classButton").addEventListener("click", textAreaValue);
 
-// //Funcion para obtener elemento de textarea decode
-// let textAreaValue1 = function () {
-//   let textArea1 = document.getElementById("decodetextarea").value;
-//   let offsetNumber = document.getElementById("offset2").value;
-//   let result = window.cipher.decode(offsetNumber, textArea1);
-//   document.getElementById("encodetextarea").value = result;
-// };
+//Function to obtain the eGFR value
+let textAreaValue1 = function () {
+  let textArea1 = document.getElementById("egfrdata").value;
+  let result = window.bpd.kidneyClassification(textArea1);
+  document.getElementById("resultKdc").value = result;
+};
 // //Funcion para copiar el texto Decode a Encode
-// document.getElementById("decodebutton").addEventListener("click", textAreaValue1);
+document.getElementById("classKidneyButton").addEventListener("click", textAreaValue1);
